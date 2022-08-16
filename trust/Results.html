@@ -1,0 +1,118 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
+    {{ if player.id_in_group == 1 }}
+        <p>
+            {{if player.group.sm_kept_amount == 400 }}
+            The second mover sent you 0 points and kept 400 points.
+            {{endif}}
+            {{if player.group.sm_kept_amount == 230 }}
+            The second mover sent you 250 points and kept 230 points.
+            {{endif}}
+            {{if player.group.sm_kept_amount == 0 }}
+            You didn't send any points to second mover to play with.
+            {{endif}}
+        </p>
+        <br/>
+           <h4> Summary of the Results of First Game(of session): </h4>
+           <br/>
+           <table>
+            <tr>
+              <th>Role</th>
+              <th style="color:#00AA00">Sent or Returned (%)</th>
+              <th style="color:#CC0000">Kept (%)</th>
+              <th>Did Not Recieved Experimental Points (%)</th>
+              <th>Total (%)</th>
+            </tr>
+            <tr>
+              <td>First Movers</td>
+              <td>{{FM_SENT_PERCENTAGE}}%</td>
+              <td>{{FM_KEPT_PERCENTAGE}}%</td>
+              <td>N/A</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+                <td>Second Movers</td>
+                <td>{{SM_SENT_PERCENTAGE}}%</td>
+                <td>{{SM_KEPT_PERCENTAGE}}%</td>
+                <td>{{SM_NOT_RECIEVED}}%</td>
+                <td>100%</td>
+            </tr>
+          </table>
+
+          <p>
+            <br/>
+              <br/>
+           <b>  Reminder:</br>
+            In Each round you are randomly matched with a different person. Identity is always anonymous.
+            If you drop out or you are not active, we will not be able to pay you.</b>
+
+        </p>
+    {{ else }}
+        <p>
+            {{if player.group.sent_amount == 200 }}
+            The first mover sent you 200 points and kept 0 points.
+            {{endif}}
+            {{if player.group.sent_amount == 0 }}
+            The first mover sent you 0 points and kept 200 points.
+            {{endif}}
+        </p>
+        <br/>
+           <h4> Summary of the Results of First Game(of session): </h4>
+           <br/>
+           <table>
+            <tr>
+              <th>Role</th>
+              <th style="color:#00AA00">Sent or Returned (%)</th>
+              <th style="color:#CC0000">Kept (%)</th>
+              <th>Did Not Recieved Experimental Points (%)</th>
+              <th>Total (%)</th>
+            </tr>
+            <tr>
+              <td>First Movers</td>
+              <td>{{FM_SENT_PERCENTAGE}}%</td>
+              <td>{{FM_KEPT_PERCENTAGE}}%</td>
+              <td>N/A</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+                <td>Second Movers</td>
+                <td>{{SM_SENT_PERCENTAGE}}%</td>
+                <td>{{SM_KEPT_PERCENTAGE}}%</td>
+                <td>{{SM_NOT_RECIEVED}}%</td>
+                <td>100%</td>
+            </tr>
+          </table>
+
+          <p>
+            <br/>
+              <br/>
+           <b>  Reminder:</br>
+            In Each round you are randomly matched with a different person. Identity is always anonymous.
+            If you drop out or you are not active, we will not be able to pay you.</b>
+
+        </p>
+        
+    {{ endif }}
+
+    <p>{{ next_button }}</p>
+
+
+
+{{ endblock }}

@@ -1,0 +1,22 @@
+{{ block title }}Your Choice{{ endblock }}
+{{ block content }}
+<p>
+    You will now play one round of interactive game with other participant.<br/>
+    <br/>
+    There are two possible roles in the game ‘First Mover’ and ‘Second Mover’. <br/>
+    <br/>
+    You will be playing as <b>‘Second Mover’</b>. 
+
+    At the beginning of round, first mover is given 200 experimental points.
+    If the first mover sends his/her points, this amount will be increased by a fixed amount by the researcher, so that you will receive more than what the first mover originally sent.
+
+</p>
+    {{ if group.sent_amount != 0 }}
+        {{ formfields }}
+    {{ else }}
+    {{ formfield_errors 'sm_kept_amount' }}
+        <p>You got 0 experimental points</p>
+    {{endif}}
+    <p>{{ next_button }}</p>
+
+{{ endblock }}

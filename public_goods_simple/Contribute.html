@@ -1,0 +1,23 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Contribute{{ endblock }}
+{{ block content }}
+
+    <p>
+        The money earned so far<br/><br/>
+       <b> Money for Showing up: Rs.300<br/>
+        Money Earned in first game = {{earned_money}}<br/>
+        Total Money = {{participant.payoff_plus_participation_fee()}}<br/></b>
+    </p>
+
+
+    {{ formfields }}
+    <p>
+      <b>  REMINDER:<br/>
+        The money collected in pool will be multiplied with 2 and redistributed to all the members of the group EQUALLY, regardless if you kept all the money or distributed half of it.
+      </b><br/>
+        If you drop out or you are not active, we will not be able to pay you.
+
+    </p>
+    {{ next_button }}
+
+{{ endblock }}

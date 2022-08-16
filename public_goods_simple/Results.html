@@ -1,0 +1,14 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    <p>
+        Thanks for being patient!!<br/><br/>
+        <b>You earned = {{player.participant.payoff_plus_participation_fee()}} <br/>
+        <br/></b>
+        You have completed the Game. Now please provide us your valid bank account number or your phone number where your earned money can be transferred.
+    </p>
+
+    {{ formfields }}
+    {{ next_button }}
+
+{{ endblock }}

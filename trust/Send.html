@@ -1,0 +1,37 @@
+{{ block title }}Your Choice{{ endblock }}
+{{ block content }}
+    <p>
+        You will now play interactive game with other participant.
+        <br/>
+        <br/>
+    There are two possible roles in the game ‘First Player’ and ‘Second Player’. Once you have been assigned this role, this will remain the same.
+
+    </p>
+
+    <p>
+    You are the first mover. You have been randomly matched with another player.
+    </br>
+    </br>
+    You have {{C.ENDOWMENT}}.
+    </p>
+
+    {{ formfields }}
+    <p>
+        If you send your Experimental Units to the Second Player, the second player will have two choices
+    <ul>
+        <li> Send you 250 Experimental points , and keep 230 Experimental points.</li>
+        <li>Send you 0 Experimental points , and keep 400 Experimental points.</li>
+    </ul>
+    </p>
+    <p>
+        <b>Reminder:<br/>
+        You are randomly matched with other person. Identity is always anonymous.
+        If you drop out or you are not active, we will not be able to pay you.</b>
+
+    </p>
+    <p>
+    {{ next_button }}
+    </p>
+
+
+{{ endblock }}
