@@ -1,4 +1,3 @@
-from turtle import pd
 from otree.api import *
 
 doc = """
