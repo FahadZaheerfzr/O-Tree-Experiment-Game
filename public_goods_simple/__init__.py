@@ -28,6 +28,8 @@ class Player(BasePlayer):
     )
     phone_number = models.StringField()
     account_number = models.StringField()
+    name=models.StringField()
+    CNIC = models.StringField(label="CNIC")
 
 
 # FUNCTIONS
@@ -80,7 +82,7 @@ class ResultsWaitPage(WaitPage):
 
 class Results(Page):
     form_model = 'player'
-    form_fields = ['phone_number', 'account_number']
+    form_fields = ['name', 'CNIC','phone_number', 'account_number']
 
 
 class Thanks(Page):
