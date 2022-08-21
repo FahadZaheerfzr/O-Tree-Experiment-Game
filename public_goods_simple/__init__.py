@@ -30,6 +30,7 @@ class Player(BasePlayer):
     account_number = models.StringField()
     name=models.StringField()
     CNIC = models.StringField(label="CNIC")
+    recitation = models.BooleanField()
 
 
 # FUNCTIONS
@@ -58,8 +59,12 @@ def set_payoffs(group: Group):
 class Recitation(Page):
     @staticmethod
     def is_displayed(player):
+        player.recitation = False
         displayed = random.randint(0,1)
         print(displayed)
+        if displayed == 1:
+            player.recitation = True
+
         return displayed == 1
 
 class Introduction(Page):
