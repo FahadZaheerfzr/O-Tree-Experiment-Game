@@ -27,6 +27,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
     phone_number = models.StringField()
+    bank_name = models.StringField()
     account_number = models.StringField()
     name=models.StringField()
     CNIC = models.StringField(label="CNIC")
