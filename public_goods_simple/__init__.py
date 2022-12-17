@@ -61,12 +61,12 @@ class Recitation(Page):
     @staticmethod
     def is_displayed(player):
         player.recitation = False
-        displayed = random.randint(0,1)
+        displayed = random.randint(0,10)
         print(displayed)
-        if displayed == 1:
+        if displayed > 4:
             player.recitation = True
 
-        return displayed == 1
+        return displayed > 4
 
 class Introduction(Page):
     form_model = 'player'
@@ -88,7 +88,7 @@ class ResultsWaitPage(WaitPage):
 
 class Results(Page):
     form_model = 'player'
-    form_fields = ['name', 'CNIC','phone_number', 'account_number']
+    form_fields = ['name', 'CNIC', 'bank_name', 'phone_number', 'account_number']
 
 
 class Thanks(Page):
