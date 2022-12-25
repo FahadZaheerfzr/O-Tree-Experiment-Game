@@ -60,13 +60,13 @@ def set_payoffs(group: Group):
 class Recitation(Page):
     @staticmethod
     def is_displayed(player):
-        player.recitation = False
+        player.recitation = True
         displayed = random.randint(0,10)
         print(displayed)
         if displayed > 4:
-            player.recitation = True
+            player.recitation = False
 
-        return displayed > 4
+        return True
 
 class Introduction(Page):
     form_model = 'player'
